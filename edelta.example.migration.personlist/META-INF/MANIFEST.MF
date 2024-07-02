@@ -4,5 +4,5 @@ Automatic-Module-Name: edelta.example.migration.personlist
 Bundle-Name: edelta.example.migration.personlist
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-SymbolicName: edelta.example.migration.personlist; singleton:=true
-Bundle-Version: 0.1.0.qualifier
+Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore
