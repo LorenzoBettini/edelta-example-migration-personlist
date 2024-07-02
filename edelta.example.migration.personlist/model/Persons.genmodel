@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/edelta.example.migration.personlist/src" modelPluginID="edelta.example.migration.personlist"
+    modelName="Persons" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>Persons.ecore</foreignModel>
+  <genPackages prefix="Persons" disposableProviderFactory="true" ecorePackage="Persons.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Persons.ecore#//Gender">
+      <genEnumLiterals ecoreEnumLiteral="Persons.ecore#//Gender/MALE"/>
+      <genEnumLiterals ecoreEnumLiteral="Persons.ecore#//Gender/FEMALE"/>
+    </genEnums>
+    <genClasses ecoreClass="Persons.ecore#//List">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Persons.ecore#//List/members"/>
+    </genClasses>
+    <genClasses ecoreClass="Persons.ecore#//Person">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Persons.ecore#//Person/list"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Persons.ecore#//Person/firstname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Persons.ecore#//Person/lastname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Persons.ecore#//Person/gender"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
