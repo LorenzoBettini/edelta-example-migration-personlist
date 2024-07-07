@@ -112,6 +112,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.eclipse.ui.dialogs.SaveAsDialog;
 import org.eclipse.ui.ide.IGotoMarker;
+import org.eclipse.ui.ide.ResourceUtil;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.MultiPageEditorPart;
 import org.eclipse.ui.views.contentoutline.ContentOutline;
@@ -121,6 +122,7 @@ import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 
+import edelta.example.migration.personlist.migrator.PersonsModelMigrator;
 import persons.provider.PersonsItemProviderAdapterFactory;
 
 
@@ -927,7 +929,7 @@ public class PersonsEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createModel() {
+	public void createModelGen() {
 		URI resourceURI = EditUIUtil.getURI(getEditorInput(), editingDomain.getResourceSet().getURIConverter());
 		Exception exception = null;
 		Resource resource = null;
@@ -946,6 +948,18 @@ public class PersonsEditor
 			resourceToDiagnosticMap.put(resource,  analyzeResourceProblems(resource, exception));
 		}
 		editingDomain.getResourceSet().eAdapters().add(problemIndicationAdapter);
+	}
+
+	public void createModel() {
+		var personMigrator = new PersonsModelMigrator();
+		try {
+			personMigrator.execute(
+				ResourceUtil.getFile(getEditorInput())
+					.getProject().getLocation().toFile().getAbsolutePath());
+		} catch (Exception e) {
+			PersonsEditorPlugin.INSTANCE.log(e);
+		}
+		createModelGen();
 	}
 
 	/**
