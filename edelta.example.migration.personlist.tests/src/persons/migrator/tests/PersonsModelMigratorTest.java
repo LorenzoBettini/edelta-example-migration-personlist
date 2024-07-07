@@ -37,6 +37,12 @@ public class PersonsModelMigratorTest {
 		applyMigrationAndAssertCorrectness();
 	}
 
+	@Test
+	public void testFromV3() throws Exception {
+		EdeltaTestUtils.copyDirectory(INPUTS + "v3", OUTPUT);
+		applyMigrationAndAssertCorrectness();
+	}
+
 	private void applyMigrationAndAssertCorrectness() throws Exception, IOException {
 		Collection<Resource> migrated = personsModelMigrator.execute(OUTPUT);
 		EdeltaTestUtils.assertFilesAreEquals(
