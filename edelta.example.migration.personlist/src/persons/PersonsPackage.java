@@ -38,7 +38,7 @@ public interface PersonsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://edelta/PersonList/v3";
+	String eNS_URI = "http://edelta/PersonList/v4";
 
 	/**
 	 * The package namespace name.
@@ -113,22 +113,13 @@ public interface PersonsPackage extends EPackage {
 	int PERSON__LIST = 0;
 
 	/**
-	 * The feature id for the '<em><b>First Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON__FIRST_NAME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSON__LAST_NAME = 2;
+	int PERSON__NAME = 1;
 
 	/**
 	 * The number of structural features of the '<em>Person</em>' class.
@@ -137,7 +128,7 @@ public interface PersonsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_FEATURE_COUNT = 3;
+	int PERSON_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Person</em>' class.
@@ -168,22 +159,13 @@ public interface PersonsPackage extends EPackage {
 	int MALE__LIST = PERSON__LIST;
 
 	/**
-	 * The feature id for the '<em><b>First Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MALE__FIRST_NAME = PERSON__FIRST_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MALE__LAST_NAME = PERSON__LAST_NAME;
+	int MALE__NAME = PERSON__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Male</em>' class.
@@ -223,22 +205,13 @@ public interface PersonsPackage extends EPackage {
 	int FEMALE__LIST = PERSON__LIST;
 
 	/**
-	 * The feature id for the '<em><b>First Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEMALE__FIRST_NAME = PERSON__FIRST_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEMALE__LAST_NAME = PERSON__LAST_NAME;
+	int FEMALE__NAME = PERSON__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Female</em>' class.
@@ -301,26 +274,15 @@ public interface PersonsPackage extends EPackage {
 	EReference getPerson_List();
 
 	/**
-	 * Returns the meta object for the attribute '{@link persons.Person#getFirstName <em>First Name</em>}'.
+	 * Returns the meta object for the attribute '{@link persons.Person#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>First Name</em>'.
-	 * @see persons.Person#getFirstName()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see persons.Person#getName()
 	 * @see #getPerson()
 	 * @generated
 	 */
-	EAttribute getPerson_FirstName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link persons.Person#getLastName <em>Last Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Last Name</em>'.
-	 * @see persons.Person#getLastName()
-	 * @see #getPerson()
-	 * @generated
-	 */
-	EAttribute getPerson_LastName();
+	EAttribute getPerson_Name();
 
 	/**
 	 * Returns the meta object for class '{@link persons.Male <em>Male</em>}'.
@@ -402,20 +364,12 @@ public interface PersonsPackage extends EPackage {
 		EReference PERSON__LIST = eINSTANCE.getPerson_List();
 
 		/**
-		 * The meta object literal for the '<em><b>First Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PERSON__FIRST_NAME = eINSTANCE.getPerson_FirstName();
-
-		/**
-		 * The meta object literal for the '<em><b>Last Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PERSON__LAST_NAME = eINSTANCE.getPerson_LastName();
+		EAttribute PERSON__NAME = eINSTANCE.getPerson_Name();
 
 		/**
 		 * The meta object literal for the '{@link persons.impl.MaleImpl <em>Male</em>}' class.

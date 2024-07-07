@@ -25,52 +25,31 @@ import persons.PersonsPackage;
  * </p>
  * <ul>
  *   <li>{@link persons.impl.PersonImpl#getList <em>List</em>}</li>
- *   <li>{@link persons.impl.PersonImpl#getFirstName <em>First Name</em>}</li>
- *   <li>{@link persons.impl.PersonImpl#getLastName <em>Last Name</em>}</li>
+ *   <li>{@link persons.impl.PersonImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	/**
-	 * The default value of the '{@link #getFirstName() <em>First Name</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFirstName()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FIRST_NAME_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getFirstName() <em>First Name</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFirstName()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String firstName = FIRST_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLastName() <em>Last Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LAST_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLastName() <em>Last Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLastName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String lastName = LAST_NAME_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -140,8 +119,8 @@ public abstract class PersonImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public String getFirstName() {
-		return firstName;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -150,34 +129,11 @@ public abstract class PersonImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public void setFirstName(String newFirstName) {
-		String oldFirstName = firstName;
-		firstName = newFirstName;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersonsPackage.PERSON__FIRST_NAME, oldFirstName, firstName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getLastName() {
-		return lastName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setLastName(String newLastName) {
-		String oldLastName = lastName;
-		lastName = newLastName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersonsPackage.PERSON__LAST_NAME, oldLastName, lastName));
+			eNotify(new ENotificationImpl(this, Notification.SET, PersonsPackage.PERSON__NAME, oldName, name));
 	}
 
 	/**
@@ -234,10 +190,8 @@ public abstract class PersonImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case PersonsPackage.PERSON__LIST:
 				return getList();
-			case PersonsPackage.PERSON__FIRST_NAME:
-				return getFirstName();
-			case PersonsPackage.PERSON__LAST_NAME:
-				return getLastName();
+			case PersonsPackage.PERSON__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -253,11 +207,8 @@ public abstract class PersonImpl extends MinimalEObjectImpl.Container implements
 			case PersonsPackage.PERSON__LIST:
 				setList((List)newValue);
 				return;
-			case PersonsPackage.PERSON__FIRST_NAME:
-				setFirstName((String)newValue);
-				return;
-			case PersonsPackage.PERSON__LAST_NAME:
-				setLastName((String)newValue);
+			case PersonsPackage.PERSON__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -274,11 +225,8 @@ public abstract class PersonImpl extends MinimalEObjectImpl.Container implements
 			case PersonsPackage.PERSON__LIST:
 				setList((List)null);
 				return;
-			case PersonsPackage.PERSON__FIRST_NAME:
-				setFirstName(FIRST_NAME_EDEFAULT);
-				return;
-			case PersonsPackage.PERSON__LAST_NAME:
-				setLastName(LAST_NAME_EDEFAULT);
+			case PersonsPackage.PERSON__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -294,10 +242,8 @@ public abstract class PersonImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case PersonsPackage.PERSON__LIST:
 				return getList() != null;
-			case PersonsPackage.PERSON__FIRST_NAME:
-				return FIRST_NAME_EDEFAULT == null ? firstName != null : !FIRST_NAME_EDEFAULT.equals(firstName);
-			case PersonsPackage.PERSON__LAST_NAME:
-				return LAST_NAME_EDEFAULT == null ? lastName != null : !LAST_NAME_EDEFAULT.equals(lastName);
+			case PersonsPackage.PERSON__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -312,10 +258,8 @@ public abstract class PersonImpl extends MinimalEObjectImpl.Container implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (firstName: ");
-		result.append(firstName);
-		result.append(", lastName: ");
-		result.append(lastName);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}
