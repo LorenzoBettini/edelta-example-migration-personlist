@@ -1,0 +1,18 @@
+import edelta.refactorings.lib.EdeltaRefactorings
+
+migrate "http://edelta/PersonList/v3" to "http://edelta/PersonList/v4"
+
+use EdeltaRefactorings as refactorings
+
+modifyEcore applyMergeAttributes epackage persons {
+	refactorings.mergeAttributes(
+		"name",
+		#[ecoreref(firstName), ecoreref(lastName)],
+		[oldValues |
+			oldValues
+				.filterNull
+				.map[toString]
+				.join(" ")
+		]
+	)
+}
