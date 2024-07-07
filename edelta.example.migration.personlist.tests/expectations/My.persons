@@ -2,10 +2,12 @@
 <person:List
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:person="http://edelta/PersonList/v2">
-  <members firstName="John"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:person="http://edelta/PersonList/v3">
+  <members xsi:type="person:Male"
+      firstName="John"
       lastName="Doe"/>
-  <members firstName="Jane"
-      lastName="Doe"
-      gender="FEMALE"/>
+  <members xsi:type="person:Female"
+      firstName="Jane"
+      lastName="Doe"/>
 </person:List>
