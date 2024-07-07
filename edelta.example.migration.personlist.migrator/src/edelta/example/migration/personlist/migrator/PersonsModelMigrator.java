@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.eclipse.emf.ecore.resource.Resource;
 
 import edelta.FromV1ToV2;
+import edelta.FromV2ToV3;
 import edelta.lib.EdeltaVersionMigrator;
 import persons.PersonsPackage;
 
@@ -15,6 +16,7 @@ public class PersonsModelMigrator {
 		// load the current (latest) version of EPackage
 		edeltaMigrator.loadCurrentEPackage(PersonsPackage.eINSTANCE);
 		// register the Edelta migration code
+		edeltaMigrator.registerMigration(FromV2ToV3::new);
 		edeltaMigrator.registerMigration(FromV1ToV2::new);
 		// load the models to check and migrate
 		edeltaMigrator.addModelFileExtension(".persons");
