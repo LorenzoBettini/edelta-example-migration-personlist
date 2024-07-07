@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: edelta.example.migration.personlist.migrator
+Bundle-ManifestVersion: 2
+Bundle-Name: edelta.example.migration.personlist.migrator
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: edelta.example.migration.personlist.migrator; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: edelta.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-17
