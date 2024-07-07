@@ -3,9 +3,11 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:person="http://edelta/PersonList/v4">
+    xmlns:person="http://edelta/PersonList/v3">
   <members xsi:type="person:Male"
-      name="John Doe"/>
+      firstName="John"
+      lastName="Doe"/>
   <members xsi:type="person:Female"
-      name="Jane Doe"/>
+      firstName="Jane"
+      lastName="Doe"/>
 </person:List>
