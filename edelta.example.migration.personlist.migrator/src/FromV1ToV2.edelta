@@ -1,0 +1,6 @@
+migrate "http://edelta/PersonList/v1" to "http://edelta/PersonList/v2"
+
+modifyEcore renameAttributes epackage persons {
+	ecoreref(firstname).name = "firstName"
+	ecoreref(lastname).name = "lastName"
+}
