@@ -19,7 +19,7 @@
 		</dependency>
 		<dependency>
 			<groupId>io.github.lorenzobettini.edelta</groupId>
-			<artifactId>edelta.lib</artifactId>
+			<artifactId>edelta.refactorings.lib</artifactId>
 		</dependency>
 	</dependencies>
 </project>

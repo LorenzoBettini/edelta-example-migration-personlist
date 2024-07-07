@@ -7,6 +7,6 @@ Bundle-Version: 1.0.0.qualifier
 Export-Package: edelta.example.migration.personlist.migrator
 Bundle-SymbolicName: edelta.example.migration.personlist.migrator; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: edelta.lib;visibility:=reexport,
+Require-Bundle: edelta.refactorings.lib;visibility:=reexport,
  edelta.example.migration.personlist
 Bundle-RequiredExecutionEnvironment: JavaSE-17

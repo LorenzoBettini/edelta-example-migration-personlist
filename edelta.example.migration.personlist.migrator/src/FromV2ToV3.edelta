@@ -1,0 +1,9 @@
+import edelta.refactorings.lib.EdeltaRefactorings
+
+migrate "http://edelta/PersonList/v2" to "http://edelta/PersonList/v3"
+
+use EdeltaRefactorings as refactorings
+
+modifyEcore applyEnumToSubclasses epackage persons {
+	refactorings.enumToSubclasses(ecoreref(gender))
+}
