@@ -15,8 +15,8 @@
     </genClasses>
     <genClasses ecoreClass="Persons.ecore#//Person">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Persons.ecore#//Person/list"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Persons.ecore#//Person/firstname"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Persons.ecore#//Person/lastname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Persons.ecore#//Person/firstName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Persons.ecore#//Person/lastName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Persons.ecore#//Person/gender"/>
     </genClasses>
   </genPackages>
