@@ -12,5 +12,7 @@ Export-Package: persons.tests
 Require-Bundle: org.eclipse.core.runtime,
  edelta.example.migration.personlist;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
- org.junit;visibility:=reexport
+ org.junit;visibility:=reexport,
+ edelta.testutils,
+ edelta.example.migration.personlist.migrator
 Bundle-ActivationPolicy: lazy
