@@ -62,7 +62,6 @@ public class PersonItemProvider
 
 			addFirstNamePropertyDescriptor(object);
 			addLastNamePropertyDescriptor(object);
-			addGenderPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -112,28 +111,6 @@ public class PersonItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Gender feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGenderPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Person_gender_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Person_gender_feature", "_UI_Person_type"),
-				 PersonsPackage.Literals.PERSON__GENDER,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns Person.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -173,7 +150,6 @@ public class PersonItemProvider
 		switch (notification.getFeatureID(Person.class)) {
 			case PersonsPackage.PERSON__FIRST_NAME:
 			case PersonsPackage.PERSON__LAST_NAME:
-			case PersonsPackage.PERSON__GENDER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

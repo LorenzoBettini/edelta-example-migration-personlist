@@ -31,13 +31,22 @@ public interface PersonsFactory extends EFactory {
 	List createList();
 
 	/**
-	 * Returns a new object of class '<em>Person</em>'.
+	 * Returns a new object of class '<em>Male</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Person</em>'.
+	 * @return a new object of class '<em>Male</em>'.
 	 * @generated
 	 */
-	Person createPerson();
+	Male createMale();
+
+	/**
+	 * Returns a new object of class '<em>Female</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Female</em>'.
+	 * @generated
+	 */
+	Female createFemale();
 
 	/**
 	 * Returns the package supported by this factory.

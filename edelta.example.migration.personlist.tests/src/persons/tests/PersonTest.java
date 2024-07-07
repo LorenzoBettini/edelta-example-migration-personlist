@@ -3,11 +3,7 @@
 package persons.tests;
 
 import junit.framework.TestCase;
-
-import junit.textui.TestRunner;
-
 import persons.Person;
-import persons.PersonsFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,7 +11,7 @@ import persons.PersonsFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PersonTest extends TestCase {
+public abstract class PersonTest extends TestCase {
 
 	/**
 	 * The fixture for this Person test case.
@@ -24,15 +20,6 @@ public class PersonTest extends TestCase {
 	 * @generated
 	 */
 	protected Person fixture = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(PersonTest.class);
-	}
 
 	/**
 	 * Constructs a new Person test case with the given name.
@@ -62,28 +49,6 @@ public class PersonTest extends TestCase {
 	 */
 	protected Person getFixture() {
 		return fixture;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#setUp()
-	 * @generated
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		setFixture(PersonsFactory.eINSTANCE.createPerson());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#tearDown()
-	 * @generated
-	 */
-	@Override
-	protected void tearDown() throws Exception {
-		setFixture(null);
 	}
 
 } //PersonTest

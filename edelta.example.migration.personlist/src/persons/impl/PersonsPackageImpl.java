@@ -4,14 +4,14 @@ package persons.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import persons.Gender;
+import persons.Female;
 import persons.List;
+import persons.Male;
 import persons.Person;
 import persons.PersonsFactory;
 import persons.PersonsPackage;
@@ -42,7 +42,14 @@ public class PersonsPackageImpl extends EPackageImpl implements PersonsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum genderEEnum = null;
+	private EClass maleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass femaleEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -170,8 +177,8 @@ public class PersonsPackageImpl extends EPackageImpl implements PersonsPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPerson_Gender() {
-		return (EAttribute)personEClass.getEStructuralFeatures().get(3);
+	public EClass getMale() {
+		return maleEClass;
 	}
 
 	/**
@@ -180,8 +187,8 @@ public class PersonsPackageImpl extends EPackageImpl implements PersonsPackage {
 	 * @generated
 	 */
 	@Override
-	public EEnum getGender() {
-		return genderEEnum;
+	public EClass getFemale() {
+		return femaleEClass;
 	}
 
 	/**
@@ -220,10 +227,10 @@ public class PersonsPackageImpl extends EPackageImpl implements PersonsPackage {
 		createEReference(personEClass, PERSON__LIST);
 		createEAttribute(personEClass, PERSON__FIRST_NAME);
 		createEAttribute(personEClass, PERSON__LAST_NAME);
-		createEAttribute(personEClass, PERSON__GENDER);
 
-		// Create enums
-		genderEEnum = createEEnum(GENDER);
+		maleEClass = createEClass(MALE);
+
+		femaleEClass = createEClass(FEMALE);
 	}
 
 	/**
@@ -254,21 +261,21 @@ public class PersonsPackageImpl extends EPackageImpl implements PersonsPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		maleEClass.getESuperTypes().add(this.getPerson());
+		femaleEClass.getESuperTypes().add(this.getPerson());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(listEClass, List.class, "List", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getList_Members(), this.getPerson(), this.getPerson_List(), "members", null, 0, -1, List.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(personEClass, Person.class, "Person", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(personEClass, Person.class, "Person", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPerson_List(), this.getList(), this.getList_Members(), "list", null, 1, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPerson_FirstName(), ecorePackage.getEString(), "firstName", null, 0, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPerson_LastName(), ecorePackage.getEString(), "lastName", null, 0, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPerson_Gender(), this.getGender(), "gender", null, 0, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		// Initialize enums and add enum literals
-		initEEnum(genderEEnum, Gender.class, "Gender");
-		addEEnumLiteral(genderEEnum, Gender.MALE);
-		addEEnumLiteral(genderEEnum, Gender.FEMALE);
+		initEClass(maleEClass, Male.class, "Male", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(femaleEClass, Female.class, "Female", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

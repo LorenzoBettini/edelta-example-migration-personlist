@@ -76,6 +76,14 @@ public class PersonsAdapterFactory extends AdapterFactoryImpl {
 				return createPersonAdapter();
 			}
 			@Override
+			public Adapter caseMale(Male object) {
+				return createMaleAdapter();
+			}
+			@Override
+			public Adapter caseFemale(Female object) {
+				return createFemaleAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -120,6 +128,34 @@ public class PersonsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPersonAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link persons.Male <em>Male</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see persons.Male
+	 * @generated
+	 */
+	public Adapter createMaleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link persons.Female <em>Female</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see persons.Female
+	 * @generated
+	 */
+	public Adapter createFemaleAdapter() {
 		return null;
 	}
 
