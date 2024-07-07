@@ -35,4 +35,13 @@ public class PersonsModelMigratorTest {
 		EdeltaTestUtils.assertResourcesAreValid(migrated);
 	}
 
+	@Test
+	public void testFromV2() throws Exception {
+		EdeltaTestUtils.copyDirectory(INPUTS + "v2", OUTPUT);
+		personsModelMigrator.execute(OUTPUT);
+		EdeltaTestUtils.assertFilesAreEquals(
+				EXPECTATIONS + TEST_MODEL,
+				OUTPUT + TEST_MODEL);
+	}
+
 }
