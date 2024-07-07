@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated Persons -->
       <package
-            uri="http://edelta/PersonList/v1"
+            uri="http://edelta/PersonList/v2"
             class="persons.PersonsPackage"
             genModel="model/Persons.genmodel"/>
    </extension>

@@ -60,27 +60,27 @@ public class PersonItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFirstnamePropertyDescriptor(object);
-			addLastnamePropertyDescriptor(object);
+			addFirstNamePropertyDescriptor(object);
+			addLastNamePropertyDescriptor(object);
 			addGenderPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Firstname feature.
+	 * This adds a property descriptor for the First Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFirstnamePropertyDescriptor(Object object) {
+	protected void addFirstNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Person_firstname_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Person_firstname_feature", "_UI_Person_type"),
-				 PersonsPackage.Literals.PERSON__FIRSTNAME,
+				 getString("_UI_Person_firstName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Person_firstName_feature", "_UI_Person_type"),
+				 PersonsPackage.Literals.PERSON__FIRST_NAME,
 				 true,
 				 false,
 				 false,
@@ -90,19 +90,19 @@ public class PersonItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Lastname feature.
+	 * This adds a property descriptor for the Last Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLastnamePropertyDescriptor(Object object) {
+	protected void addLastNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Person_lastname_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Person_lastname_feature", "_UI_Person_type"),
-				 PersonsPackage.Literals.PERSON__LASTNAME,
+				 getString("_UI_Person_lastName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Person_lastName_feature", "_UI_Person_type"),
+				 PersonsPackage.Literals.PERSON__LAST_NAME,
 				 true,
 				 false,
 				 false,
@@ -152,7 +152,7 @@ public class PersonItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Person)object).getFirstname();
+		String label = ((Person)object).getFirstName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Person_type") :
 			getString("_UI_Person_type") + " " + label;
@@ -171,8 +171,8 @@ public class PersonItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Person.class)) {
-			case PersonsPackage.PERSON__FIRSTNAME:
-			case PersonsPackage.PERSON__LASTNAME:
+			case PersonsPackage.PERSON__FIRST_NAME:
+			case PersonsPackage.PERSON__LAST_NAME:
 			case PersonsPackage.PERSON__GENDER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

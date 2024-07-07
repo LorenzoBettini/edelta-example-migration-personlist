@@ -39,7 +39,7 @@ public interface PersonsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://edelta/PersonList/v1";
+	String eNS_URI = "http://edelta/PersonList/v2";
 
 	/**
 	 * The package namespace name.
@@ -114,22 +114,22 @@ public interface PersonsPackage extends EPackage {
 	int PERSON__LIST = 0;
 
 	/**
-	 * The feature id for the '<em><b>Firstname</b></em>' attribute.
+	 * The feature id for the '<em><b>First Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON__FIRSTNAME = 1;
+	int PERSON__FIRST_NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Lastname</b></em>' attribute.
+	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON__LASTNAME = 2;
+	int PERSON__LAST_NAME = 2;
 
 	/**
 	 * The feature id for the '<em><b>Gender</b></em>' attribute.
@@ -212,26 +212,26 @@ public interface PersonsPackage extends EPackage {
 	EReference getPerson_List();
 
 	/**
-	 * Returns the meta object for the attribute '{@link persons.Person#getFirstname <em>Firstname</em>}'.
+	 * Returns the meta object for the attribute '{@link persons.Person#getFirstName <em>First Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Firstname</em>'.
-	 * @see persons.Person#getFirstname()
+	 * @return the meta object for the attribute '<em>First Name</em>'.
+	 * @see persons.Person#getFirstName()
 	 * @see #getPerson()
 	 * @generated
 	 */
-	EAttribute getPerson_Firstname();
+	EAttribute getPerson_FirstName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link persons.Person#getLastname <em>Lastname</em>}'.
+	 * Returns the meta object for the attribute '{@link persons.Person#getLastName <em>Last Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Lastname</em>'.
-	 * @see persons.Person#getLastname()
+	 * @return the meta object for the attribute '<em>Last Name</em>'.
+	 * @see persons.Person#getLastName()
 	 * @see #getPerson()
 	 * @generated
 	 */
-	EAttribute getPerson_Lastname();
+	EAttribute getPerson_LastName();
 
 	/**
 	 * Returns the meta object for the attribute '{@link persons.Person#getGender <em>Gender</em>}'.
@@ -314,20 +314,20 @@ public interface PersonsPackage extends EPackage {
 		EReference PERSON__LIST = eINSTANCE.getPerson_List();
 
 		/**
-		 * The meta object literal for the '<em><b>Firstname</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>First Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PERSON__FIRSTNAME = eINSTANCE.getPerson_Firstname();
+		EAttribute PERSON__FIRST_NAME = eINSTANCE.getPerson_FirstName();
 
 		/**
-		 * The meta object literal for the '<em><b>Lastname</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Last Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PERSON__LASTNAME = eINSTANCE.getPerson_Lastname();
+		EAttribute PERSON__LAST_NAME = eINSTANCE.getPerson_LastName();
 
 		/**
 		 * The meta object literal for the '<em><b>Gender</b></em>' attribute feature.
