@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 
 import edelta.FromV1ToV2;
 import edelta.FromV2ToV3;
+import edelta.FromV3ToV4;
 import edelta.lib.EdeltaVersionMigrator;
 import persons.PersonsPackage;
 
@@ -18,6 +19,7 @@ public class PersonsModelMigrator {
 		// register the Edelta migration code
 		edeltaMigrator.registerMigration(FromV2ToV3::new);
 		edeltaMigrator.registerMigration(FromV1ToV2::new);
+		edeltaMigrator.registerMigration(FromV3ToV4::new);
 		// load the models to check and migrate
 		edeltaMigrator.addModelFileExtension(".persons");
 		edeltaMigrator.loadModelsFrom(modelPath);
