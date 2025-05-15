@@ -14,6 +14,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
@@ -123,6 +124,7 @@ import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 
 import edelta.example.migration.personlist.migrator.PersonsModelMigrator;
+import edelta.lib.EdeltaResourceUtils;
 import persons.provider.PersonsItemProviderAdapterFactory;
 
 
@@ -953,9 +955,19 @@ public class PersonsEditor
 	public void createModel() {
 		var personMigrator = new PersonsModelMigrator();
 		try {
-			personMigrator.execute(
-				ResourceUtil.getFile(getEditorInput())
-					.getProject().getLocation().toFile().getAbsolutePath());
+			var projectPath = ResourceUtil.getFile(getEditorInput())
+				.getProject().getLocation().toFile().getAbsolutePath();
+			var migrated = personMigrator.execute(projectPath);
+			if (!migrated.isEmpty()) {
+				// show the migrated models in an information dialog
+				MessageDialog.openInformation(
+					getSite().getShell(),
+					"Migration",
+					"The following models have been migrated:\n\n" +
+							migrated.stream()
+								.map(m -> EdeltaResourceUtils.getRelativePath(m, projectPath))
+								.collect(Collectors.joining("\n")));
+			}
 		} catch (Exception e) {
 			PersonsEditorPlugin.INSTANCE.log(e);
 		}
