@@ -33,5 +33,52 @@
             contributorClass="persons.presentation.PersonsActionBarContributor">
       </editor>
    </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="edelta.example.migration.personlist.editor.commands.category"
+            name="Migration Category">
+      </category>
+      <command
+            categoryId="edelta.example.migration.personlist.editor.commands.category"
+            id="edelta.example.migration.personlist.editor.commands.migrationCommand"
+            name="Migrate Persons Models">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="edelta.example.migration.personlist.editor.handlers.PersonsModelMigrationHandler"
+            commandId="edelta.example.migration.personlist.editor.commands.migrationCommand">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               id="edelta.example.migration.personlist.editor.menus.migrationMenu"
+               label="Migration"
+               mnemonic="M">
+            <command
+                  commandId="edelta.example.migration.personlist.editor.commands.migrationCommand"
+                  id="edelta.example.migration.personlist.editor.menus.migrationCommand"
+                  mnemonic="S">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="edelta.example.migration.personlist.editor.toolbars.migrationToolbar">
+            <command
+                  commandId="edelta.example.migration.personlist.editor.commands.migrationCommand"
+                  icon="icons/sample.png"
+                  id="edelta.example.migration.personlist.editor.toolbars.migrationCommand"
+                  tooltip="Migrate Persons Models">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
 
 </plugin>
