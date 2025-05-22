@@ -13,6 +13,7 @@
 
 	<properties>
 		<platformSystemProperties></platformSystemProperties>
+		<maven.deploy.skip>true</maven.deploy.skip>
 	</properties>
 
 	<profiles>
