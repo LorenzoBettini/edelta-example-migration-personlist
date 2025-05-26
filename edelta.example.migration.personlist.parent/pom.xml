@@ -21,6 +21,7 @@
 		<module>../edelta.example.migration.personlist.editor/</module>
 		<module>../edelta.example.migration.personlist.migrator/</module>
 		<module>../edelta.example.migration.personlist.tests/</module>
+		<module>../edelta.example.migration.personlist.ui.tests/</module>
 	</modules>
 
 	<dependencyManagement>
