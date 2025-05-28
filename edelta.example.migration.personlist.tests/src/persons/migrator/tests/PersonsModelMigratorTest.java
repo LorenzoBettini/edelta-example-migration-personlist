@@ -28,20 +28,21 @@ public class PersonsModelMigratorTest {
 	@Test
 	public void testFromV1() throws Exception {
 		EdeltaTestUtils.copyDirectory(INPUTS + "v1", OUTPUT);
-		Collection<Resource> migrated = personsModelMigrator.execute(OUTPUT);
-		EdeltaTestUtils.assertFilesAreEquals(
-				EXPECTATIONS + TEST_MODEL,
-				OUTPUT + TEST_MODEL);
-		EdeltaTestUtils.assertResourcesAreValid(migrated);
+		applyMigrationAndAssertCorrectness();
 	}
 
 	@Test
 	public void testFromV2() throws Exception {
 		EdeltaTestUtils.copyDirectory(INPUTS + "v2", OUTPUT);
-		personsModelMigrator.execute(OUTPUT);
+		applyMigrationAndAssertCorrectness();
+	}
+
+	private void applyMigrationAndAssertCorrectness() throws Exception, IOException {
+		Collection<Resource> migrated = personsModelMigrator.execute(OUTPUT);
 		EdeltaTestUtils.assertFilesAreEquals(
 				EXPECTATIONS + TEST_MODEL,
 				OUTPUT + TEST_MODEL);
+		EdeltaTestUtils.assertResourcesAreValid(migrated);
 	}
 
 }
