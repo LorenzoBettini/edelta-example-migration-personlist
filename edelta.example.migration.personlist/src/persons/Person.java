@@ -16,11 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link persons.Person#getList <em>List</em>}</li>
  *   <li>{@link persons.Person#getFirstName <em>First Name</em>}</li>
  *   <li>{@link persons.Person#getLastName <em>Last Name</em>}</li>
- *   <li>{@link persons.Person#getGender <em>Gender</em>}</li>
  * </ul>
  *
  * @see persons.PersonsPackage#getPerson()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Person extends EObject {
@@ -91,30 +90,5 @@ public interface Person extends EObject {
 	 * @generated
 	 */
 	void setLastName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Gender</b></em>' attribute.
-	 * The literals are from the enumeration {@link persons.Gender}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Gender</em>' attribute.
-	 * @see persons.Gender
-	 * @see #setGender(Gender)
-	 * @see persons.PersonsPackage#getPerson_Gender()
-	 * @model
-	 * @generated
-	 */
-	Gender getGender();
-
-	/**
-	 * Sets the value of the '{@link persons.Person#getGender <em>Gender</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gender</em>' attribute.
-	 * @see persons.Gender
-	 * @see #getGender()
-	 * @generated
-	 */
-	void setGender(Gender value);
 
 } // Person

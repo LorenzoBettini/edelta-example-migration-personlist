@@ -4,7 +4,6 @@ package persons;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -39,7 +38,7 @@ public interface PersonsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://edelta/PersonList/v2";
+	String eNS_URI = "http://edelta/PersonList/v3";
 
 	/**
 	 * The package namespace name.
@@ -132,22 +131,13 @@ public interface PersonsPackage extends EPackage {
 	int PERSON__LAST_NAME = 2;
 
 	/**
-	 * The feature id for the '<em><b>Gender</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSON__GENDER = 3;
-
-	/**
 	 * The number of structural features of the '<em>Person</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_FEATURE_COUNT = 4;
+	int PERSON_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Person</em>' class.
@@ -159,15 +149,114 @@ public interface PersonsPackage extends EPackage {
 	int PERSON_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link persons.Gender <em>Gender</em>}' enum.
+	 * The meta object id for the '{@link persons.impl.MaleImpl <em>Male</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see persons.Gender
-	 * @see persons.impl.PersonsPackageImpl#getGender()
+	 * @see persons.impl.MaleImpl
+	 * @see persons.impl.PersonsPackageImpl#getMale()
 	 * @generated
 	 */
-	int GENDER = 2;
+	int MALE = 2;
 
+	/**
+	 * The feature id for the '<em><b>List</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MALE__LIST = PERSON__LIST;
+
+	/**
+	 * The feature id for the '<em><b>First Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MALE__FIRST_NAME = PERSON__FIRST_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MALE__LAST_NAME = PERSON__LAST_NAME;
+
+	/**
+	 * The number of structural features of the '<em>Male</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MALE_FEATURE_COUNT = PERSON_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Male</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MALE_OPERATION_COUNT = PERSON_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link persons.impl.FemaleImpl <em>Female</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see persons.impl.FemaleImpl
+	 * @see persons.impl.PersonsPackageImpl#getFemale()
+	 * @generated
+	 */
+	int FEMALE = 3;
+
+	/**
+	 * The feature id for the '<em><b>List</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEMALE__LIST = PERSON__LIST;
+
+	/**
+	 * The feature id for the '<em><b>First Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEMALE__FIRST_NAME = PERSON__FIRST_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEMALE__LAST_NAME = PERSON__LAST_NAME;
+
+	/**
+	 * The number of structural features of the '<em>Female</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEMALE_FEATURE_COUNT = PERSON_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Female</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEMALE_OPERATION_COUNT = PERSON_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link persons.List <em>List</em>}'.
@@ -234,25 +323,24 @@ public interface PersonsPackage extends EPackage {
 	EAttribute getPerson_LastName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link persons.Person#getGender <em>Gender</em>}'.
+	 * Returns the meta object for class '{@link persons.Male <em>Male</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Gender</em>'.
-	 * @see persons.Person#getGender()
-	 * @see #getPerson()
+	 * @return the meta object for class '<em>Male</em>'.
+	 * @see persons.Male
 	 * @generated
 	 */
-	EAttribute getPerson_Gender();
+	EClass getMale();
 
 	/**
-	 * Returns the meta object for enum '{@link persons.Gender <em>Gender</em>}'.
+	 * Returns the meta object for class '{@link persons.Female <em>Female</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Gender</em>'.
-	 * @see persons.Gender
+	 * @return the meta object for class '<em>Female</em>'.
+	 * @see persons.Female
 	 * @generated
 	 */
-	EEnum getGender();
+	EClass getFemale();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -330,22 +418,24 @@ public interface PersonsPackage extends EPackage {
 		EAttribute PERSON__LAST_NAME = eINSTANCE.getPerson_LastName();
 
 		/**
-		 * The meta object literal for the '<em><b>Gender</b></em>' attribute feature.
+		 * The meta object literal for the '{@link persons.impl.MaleImpl <em>Male</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see persons.impl.MaleImpl
+		 * @see persons.impl.PersonsPackageImpl#getMale()
 		 * @generated
 		 */
-		EAttribute PERSON__GENDER = eINSTANCE.getPerson_Gender();
+		EClass MALE = eINSTANCE.getMale();
 
 		/**
-		 * The meta object literal for the '{@link persons.Gender <em>Gender</em>}' enum.
+		 * The meta object literal for the '{@link persons.impl.FemaleImpl <em>Female</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see persons.Gender
-		 * @see persons.impl.PersonsPackageImpl#getGender()
+		 * @see persons.impl.FemaleImpl
+		 * @see persons.impl.PersonsPackageImpl#getFemale()
 		 * @generated
 		 */
-		EEnum GENDER = eINSTANCE.getGender();
+		EClass FEMALE = eINSTANCE.getFemale();
 
 	}
 

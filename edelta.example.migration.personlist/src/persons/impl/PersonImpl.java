@@ -12,8 +12,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
-import persons.Gender;
 import persons.List;
 import persons.Person;
 import persons.PersonsPackage;
@@ -29,12 +27,11 @@ import persons.PersonsPackage;
  *   <li>{@link persons.impl.PersonImpl#getList <em>List</em>}</li>
  *   <li>{@link persons.impl.PersonImpl#getFirstName <em>First Name</em>}</li>
  *   <li>{@link persons.impl.PersonImpl#getLastName <em>Last Name</em>}</li>
- *   <li>{@link persons.impl.PersonImpl#getGender <em>Gender</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
+public abstract class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	/**
 	 * The default value of the '{@link #getFirstName() <em>First Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -74,26 +71,6 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 * @ordered
 	 */
 	protected String lastName = LAST_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getGender() <em>Gender</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGender()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Gender GENDER_EDEFAULT = Gender.MALE;
-
-	/**
-	 * The cached value of the '{@link #getGender() <em>Gender</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGender()
-	 * @generated
-	 * @ordered
-	 */
-	protected Gender gender = GENDER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,29 +186,6 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 * @generated
 	 */
 	@Override
-	public Gender getGender() {
-		return gender;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setGender(Gender newGender) {
-		Gender oldGender = gender;
-		gender = newGender == null ? GENDER_EDEFAULT : newGender;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersonsPackage.PERSON__GENDER, oldGender, gender));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case PersonsPackage.PERSON__LIST:
@@ -284,8 +238,6 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 				return getFirstName();
 			case PersonsPackage.PERSON__LAST_NAME:
 				return getLastName();
-			case PersonsPackage.PERSON__GENDER:
-				return getGender();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -306,9 +258,6 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 				return;
 			case PersonsPackage.PERSON__LAST_NAME:
 				setLastName((String)newValue);
-				return;
-			case PersonsPackage.PERSON__GENDER:
-				setGender((Gender)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -331,9 +280,6 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 			case PersonsPackage.PERSON__LAST_NAME:
 				setLastName(LAST_NAME_EDEFAULT);
 				return;
-			case PersonsPackage.PERSON__GENDER:
-				setGender(GENDER_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -352,8 +298,6 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 				return FIRST_NAME_EDEFAULT == null ? firstName != null : !FIRST_NAME_EDEFAULT.equals(firstName);
 			case PersonsPackage.PERSON__LAST_NAME:
 				return LAST_NAME_EDEFAULT == null ? lastName != null : !LAST_NAME_EDEFAULT.equals(lastName);
-			case PersonsPackage.PERSON__GENDER:
-				return gender != GENDER_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -372,8 +316,6 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 		result.append(firstName);
 		result.append(", lastName: ");
 		result.append(lastName);
-		result.append(", gender: ");
-		result.append(gender);
 		result.append(')');
 		return result.toString();
 	}

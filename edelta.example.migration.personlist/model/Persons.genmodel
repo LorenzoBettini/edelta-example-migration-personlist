@@ -7,10 +7,6 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>Persons.ecore</foreignModel>
   <genPackages prefix="Persons" disposableProviderFactory="true" ecorePackage="Persons.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Persons.ecore#//Gender">
-      <genEnumLiterals ecoreEnumLiteral="Persons.ecore#//Gender/MALE"/>
-      <genEnumLiterals ecoreEnumLiteral="Persons.ecore#//Gender/FEMALE"/>
-    </genEnums>
     <genClasses ecoreClass="Persons.ecore#//List">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Persons.ecore#//List/members"/>
     </genClasses>
@@ -18,7 +14,8 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Persons.ecore#//Person/list"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Persons.ecore#//Person/firstName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Persons.ecore#//Person/lastName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Persons.ecore#//Person/gender"/>
     </genClasses>
+    <genClasses ecoreClass="Persons.ecore#//Male"/>
+    <genClasses ecoreClass="Persons.ecore#//Female"/>
   </genPackages>
 </genmodel:GenModel>

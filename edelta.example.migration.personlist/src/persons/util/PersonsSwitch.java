@@ -78,6 +78,20 @@ public class PersonsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case PersonsPackage.MALE: {
+				Male male = (Male)theEObject;
+				T result = caseMale(male);
+				if (result == null) result = casePerson(male);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PersonsPackage.FEMALE: {
+				Female female = (Female)theEObject;
+				T result = caseFemale(female);
+				if (result == null) result = casePerson(female);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -109,6 +123,36 @@ public class PersonsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePerson(Person object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Male</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Male</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMale(Male object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Female</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Female</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFemale(Female object) {
 		return null;
 	}
 

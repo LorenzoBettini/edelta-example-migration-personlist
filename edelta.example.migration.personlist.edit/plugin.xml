@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated Persons -->
       <factory
-            uri="http://edelta/PersonList/v2"
+            uri="http://edelta/PersonList/v3"
             class="persons.provider.PersonsItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

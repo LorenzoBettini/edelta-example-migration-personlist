@@ -150,7 +150,12 @@ public class ListItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(PersonsPackage.Literals.LIST__MEMBERS,
-				 PersonsFactory.eINSTANCE.createPerson()));
+				 PersonsFactory.eINSTANCE.createMale()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PersonsPackage.Literals.LIST__MEMBERS,
+				 PersonsFactory.eINSTANCE.createFemale()));
 	}
 
 	/**

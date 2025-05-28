@@ -95,26 +95,49 @@ public class PersonsItemProviderAdapterFactory extends PersonsAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link persons.Person} instances.
+	 * This keeps track of the one adapter used for all {@link persons.Male} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PersonItemProvider personItemProvider;
+	protected MaleItemProvider maleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link persons.Person}.
+	 * This creates an adapter for a {@link persons.Male}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPersonAdapter() {
-		if (personItemProvider == null) {
-			personItemProvider = new PersonItemProvider(this);
+	public Adapter createMaleAdapter() {
+		if (maleItemProvider == null) {
+			maleItemProvider = new MaleItemProvider(this);
 		}
 
-		return personItemProvider;
+		return maleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link persons.Female} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FemaleItemProvider femaleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link persons.Female}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFemaleAdapter() {
+		if (femaleItemProvider == null) {
+			femaleItemProvider = new FemaleItemProvider(this);
+		}
+
+		return femaleItemProvider;
 	}
 
 	/**
@@ -223,7 +246,8 @@ public class PersonsItemProviderAdapterFactory extends PersonsAdapterFactory imp
 	@Override
 	public void dispose() {
 		if (listItemProvider != null) listItemProvider.dispose();
-		if (personItemProvider != null) personItemProvider.dispose();
+		if (maleItemProvider != null) maleItemProvider.dispose();
+		if (femaleItemProvider != null) femaleItemProvider.dispose();
 	}
 
 }
