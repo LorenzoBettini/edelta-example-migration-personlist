@@ -14,8 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link persons.Person#getList <em>List</em>}</li>
- *   <li>{@link persons.Person#getFirstName <em>First Name</em>}</li>
- *   <li>{@link persons.Person#getLastName <em>Last Name</em>}</li>
+ *   <li>{@link persons.Person#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see persons.PersonsPackage#getPerson()
@@ -48,47 +47,25 @@ public interface Person extends EObject {
 	void setList(List value);
 
 	/**
-	 * Returns the value of the '<em><b>First Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>First Name</em>' attribute.
-	 * @see #setFirstName(String)
-	 * @see persons.PersonsPackage#getPerson_FirstName()
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see persons.PersonsPackage#getPerson_Name()
 	 * @model
 	 * @generated
 	 */
-	String getFirstName();
+	String getName();
 
 	/**
-	 * Sets the value of the '{@link persons.Person#getFirstName <em>First Name</em>}' attribute.
+	 * Sets the value of the '{@link persons.Person#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>First Name</em>' attribute.
-	 * @see #getFirstName()
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	void setFirstName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Last Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Last Name</em>' attribute.
-	 * @see #setLastName(String)
-	 * @see persons.PersonsPackage#getPerson_LastName()
-	 * @model
-	 * @generated
-	 */
-	String getLastName();
-
-	/**
-	 * Sets the value of the '{@link persons.Person#getLastName <em>Last Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Last Name</em>' attribute.
-	 * @see #getLastName()
-	 * @generated
-	 */
-	void setLastName(String value);
+	void setName(String value);
 
 } // Person

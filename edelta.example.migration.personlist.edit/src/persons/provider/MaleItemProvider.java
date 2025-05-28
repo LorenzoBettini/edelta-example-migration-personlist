@@ -64,7 +64,7 @@ public class MaleItemProvider extends PersonItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Male)object).getFirstName();
+		String label = ((Male)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Male_type") :
 			getString("_UI_Male_type") + " " + label;

@@ -157,18 +157,8 @@ public class PersonsPackageImpl extends EPackageImpl implements PersonsPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPerson_FirstName() {
+	public EAttribute getPerson_Name() {
 		return (EAttribute)personEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPerson_LastName() {
-		return (EAttribute)personEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -225,8 +215,7 @@ public class PersonsPackageImpl extends EPackageImpl implements PersonsPackage {
 
 		personEClass = createEClass(PERSON);
 		createEReference(personEClass, PERSON__LIST);
-		createEAttribute(personEClass, PERSON__FIRST_NAME);
-		createEAttribute(personEClass, PERSON__LAST_NAME);
+		createEAttribute(personEClass, PERSON__NAME);
 
 		maleEClass = createEClass(MALE);
 
@@ -270,8 +259,7 @@ public class PersonsPackageImpl extends EPackageImpl implements PersonsPackage {
 
 		initEClass(personEClass, Person.class, "Person", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPerson_List(), this.getList(), this.getList_Members(), "list", null, 1, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPerson_FirstName(), ecorePackage.getEString(), "firstName", null, 0, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPerson_LastName(), ecorePackage.getEString(), "lastName", null, 0, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPerson_Name(), ecorePackage.getEString(), "name", null, 0, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(maleEClass, Male.class, "Male", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
