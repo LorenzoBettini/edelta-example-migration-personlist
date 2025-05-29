@@ -46,6 +46,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<tycho-version>4.0.12</tycho-version>
 		<edelta-version>3.8.6</edelta-version>
+		<xtext-version>2.38.0</xtext-version>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
 
@@ -145,7 +146,7 @@
 
 	<profiles>
 		<!-- For deployment:
-		mvn -f edelta.example.migration.personlist.parent deploy -DskipTests -Psonatype-oss-release
+		mvn -f edelta.example.migration.personlist.parent clean deploy -DskipTests -Psonatype-oss-release
 		find ~/.m2/repository -name "*personlist*" -exec rm -rf {} \+
 		-->
 		<profile>
