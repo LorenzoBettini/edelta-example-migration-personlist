@@ -162,6 +162,20 @@
 						<extensions>true</extensions>
 						<configuration>
 							<publishingServerId>central</publishingServerId>
+							<excludeArtifacts>
+								<excludeArtifact>
+									edelta.example.migration.personlist.edit
+								</excludeArtifact>
+								<excludeArtifact>
+									edelta.example.migration.personlist.editor
+								</excludeArtifact>
+								<excludeArtifact>
+									edelta.example.migration.personlist.tests
+								</excludeArtifact>
+								<excludeArtifact>
+									edelta.example.migration.personlist.ui.tests
+								</excludeArtifact>
+							</excludeArtifacts>
 						</configuration>
 					</plugin>
 					<plugin>
