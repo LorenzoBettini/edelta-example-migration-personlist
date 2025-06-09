@@ -144,7 +144,7 @@
 
 	<profiles>
 		<!-- For deployment:
-		mvn -f edelta.example.migration.personlist.parent clean deploy -DskipTests -Psonatype-oss-release
+		mvn -U -f edelta.example.migration.personlist.parent clean deploy -DskipTests -Psonatype-oss-release
 		find ~/.m2/repository -name "*personlist*" -exec rm -rf {} \+
 		-->
 		<profile>
