@@ -11,6 +11,9 @@
 	<artifactId>edelta.example.migration.personlist.migrator</artifactId>
 	<packaging>eclipse-plugin</packaging>
 
+	<name>Edelta Migration Example Personlist Migrator</name>
+	<description>Edelta Migration Example Personlist Migrator</description>
+
 	<dependencies>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
